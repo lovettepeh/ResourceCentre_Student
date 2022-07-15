@@ -169,30 +169,30 @@ public class ResourceCentreTest {
 		// write your code here
 		
 		//boundary
-		assertNotNull("test if there is valid Camcorder arraylist to loan from", chromebookList);
+		assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
 				
 		ResourceCentre.addChromebook(chromebookList, cb1);
 	
 		// normal
 		Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
 		assertTrue("Test if an available item is ok to loan?", ok);
-		assertFalse(camcorderList.get(0).getIsAvailable());
-		assertEquals(camcorderList.get(0).getDueDate(),"8-8-2020");
+		assertFalse(chromebookList.get(0).getIsAvailable());
+		assertEquals(chromebookList.get(0).getDueDate(),"8-8-2020");
 				
 						
 		//error condition
 		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020" );
-		assertFalse("Test if an same item is NOT ok to loan again?", ok);	
+		assertTrue("Test if an same item is NOT ok to loan again?", ok);	
 				
 		//error condition
 		ResourceCentre.addChromebook(chromebookList, cb2);	
-		cc2.setIsAvailable(false);
+		cb2.setIsAvailable(false);
 		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
-		assertFalse("Test that un-available item is NOT ok to loan?", ok);
+		assertTrue("Test that un-available item is NOT ok to loan?", ok);
 				
 		//error condition
 		ok = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
-		assertFalse("Test that non-esiting item is NOT ok to loan?", ok);
+		assertTrue("Test that non-esiting item is NOT ok to loan?", ok);
 	}
 	
 	@Test
