@@ -238,6 +238,7 @@ public class ResourceCentre {
 		}
 		return true;
 	}
+	
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
 		ResourceCentre.viewAllChromebook(chromebookList);

@@ -138,7 +138,7 @@ public class ResourceCentreTest {
 
 		//boundary
 		assertNotNull("test if there is valid Camcorder arraylist to loan from", camcorderList);
-		
+	
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		
 		// normal
